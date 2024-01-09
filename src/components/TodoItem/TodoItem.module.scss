@@ -1,0 +1,71 @@
+.todo {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .btn {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      width: 6.5rem;
+      padding: 10px;
+      border: none;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .delete {
+      background-color: rgb(229, 27, 27);
+      color: #fff;
+      &:hover {
+        background-color: transparent;
+        border: 1px solid rgb(229, 27, 27);
+        color: rgb(229, 27, 27);
+      }
+    }
+    .update {
+      background-color: rgb(58, 58, 218);
+      color: #fff;
+      &:hover {
+        background-color: transparent;
+        border: 1px solid rgb(58, 58, 218);
+        color: rgb(58, 58, 218);
+      }
+    }
+  }
+
+  input {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .todo{
+    flex-direction: column;
+    padding: 1.2rem;
+    text-align: center;
+
+    .actions{
+      .btn{
+        width: 6rem;
+        padding: 5px 0px;
+      }
+    }
+
+    input {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
