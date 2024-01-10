@@ -8,6 +8,7 @@ import { Toaster } from "react-hot-toast";
 
 export const server = "https://nodejs-todoapp-izw1.onrender.com/api/v1";
 
+
 export const Context = createContext();
 
 const AppWrapper = () => {

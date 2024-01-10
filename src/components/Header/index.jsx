@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { Context, server } from "../../main";
 
-const Index = () => {
+const Index = (props) => {
   const { loading, setLoading } = useContext(Context);
   const navigate = useNavigate();
+
+
 
   const logoutHandler = async () => {
     setLoading(true);
@@ -18,8 +20,9 @@ const Index = () => {
       toast.success("Logged Out Successfully");
       navigate("/login");
       localStorage.clear();
+      props?.setLogo('')
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log('error', error)
     }
     setLoading(false);
   };
@@ -43,6 +46,7 @@ const Index = () => {
         ) : (
           <button onClick={()=>navigate('/login')} className={styles.btn}>Login</button>
         )}
+       {props?.logo && <img className={styles.img} src={props?.logo} alt="profile-img" />}
       </article>
     </nav>
   );
